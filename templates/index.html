@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home
+{% endblock title %}
+{% block active1 %}active{% endblock active1 %}
+{% block button %}
+
+<div class="mx-2">
+  <button class="btn btn-danger" class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#LoginModal">Login</button>
+  <button class="btn btn-danger" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SignUpModal">Sign
+    Up</button>
+</div>
+
+{% endblock button %}
+{% block body%}
+{% load static%}
+
+
+
+
+<!-- Login modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="LoginModalLabel">Login to iCoder</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form class="form-signin" method="post" action="/login">
+        {% csrf_token %}
+        <div class="modal-body">
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
+            <label for="floatingInput">Username</label>
+          </div>
+
+
+          <div class="form-floating">
+            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">
+            Submit
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Sign Up modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="SignUpModalLabel">Get an iCoder Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="form-signin" method="post" action="/signup">
+        {% csrf_token %}
+        <div class="modal-body">
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
+            <label for="floatingInput">Username</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <br>
+          <button class="btn btn-primary">
+            Submit
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid px-0">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/carousel1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/static/carousel2.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/static/carousel3.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div class="container my-3">
+  <h1 class="my-2 text-center">Login to our website</h1>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col">
+      <div class="card shadow-sm">
+       <img src="/static/box1.jpg" class="d-block w-100" alt="..."> 
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+            dy=".3em">Thumbnail</text>
+        </svg>
+
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="/static/box2.jpg" class="d-block w-100" alt="..."> 
+                  <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+            dy=".3em">Thumbnail</text>
+        </svg>
+
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="/static/box3.jpg" class="d-block w-100" alt="..."> 
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+            dy=".3em">Thumbnail</text>
+        </svg>
+
+        <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    
+  </div>
+</div>
+{% endblock body %}
